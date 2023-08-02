@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website Title</title>
+
+</head>
+<body>
+  <header>
+    <h1>Teste NUTI</h1>
+  </header>
+
+  <div class="container">
+    <h2>Contador de Tags</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-outline">
+            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+            <label class="form-label" for="textAreaExample">Escreva as Urls aqui (Separar Urls com um espaço ' ')</label>
+          </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+      </form>
+  </div>
+  <br>
+  <br>
+    <div class="d-flex align-items-center justify-content-center text-center">
+        <table class="table d-flex align-items-center justify-content-center text-center table-hover" style="width:50%">
+            <thead class="bg-light">
+                <tr>
+                    <th>Detalhes</th>
+                    <th>Id</th>
+                    <th>Url</th>
+                </tr>
+            </thead>
+            <!-- <tbody>
+                <div *ngFor="let item of items">
+                    <tr (click)="showDetails(item)">
+                                <td>Item:</td>
+                    <td>{{item.id}}</td>
+                    </tr>
+            <tr *ngIf="elementDetails!=null && item.id==elementDetails.id">
+            <td>item: {{elementDetails.id}}</td>
+                    <td> description: {{elementDetails.description}}</td>
+                    
+                </tr>
+                </div>
+
+            </tbody> -->
+        </table>
+    </div>
+
+  <footer>
+  </footer>
+</body>
+</html>
