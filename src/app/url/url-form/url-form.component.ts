@@ -19,8 +19,9 @@ export class UrlFormComponent{
   elementDetails: any = {
     id: String,
     url: String,
-    listaTag: []
+    listaTag: [],
   };
+  mostrarBotao: Boolean = true;
 
   constructor(private urlService: UrlService) {}
   ngOnInit(): void {
@@ -51,8 +52,11 @@ export class UrlFormComponent{
   showDetails(url:Url) {
     if (this.elementDetails != null && this.elementDetails.id == url.id){
       this.elementDetails = null;
+      this.mostrarBotao = true;
       }
-    else this.elementDetails = url;
+    else {
+      this.elementDetails = url;
+      this.mostrarBotao = false;
+    }
   }
-
 }

@@ -29,41 +29,44 @@
   <br>
   <div class="d-flex align-items-center justify-content-center text-center">
     <table class="table table-hover" style="width:50%">
-      <thead class="bg-light">
+      <thead class="bg-light text-center">
         <tr>
           <th>Detalhes</th>
           <th>Id</th>
           <th>Url</th>
-          <th> <button type="button" class="btn btn-default btn-sm" (click)="refreshTable()">
-            <span class="glyphicon glyphicon-refresh"></span> Refresh
-          </button></th>
+          <th>
+            <button type="button" class="btn btn-default btn-sm" (click)="refreshTable()">
+              <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+          </th>
         </tr>
       </thead>
       <tbody class="bg-light">
         <tr *ngFor="let url of listaUrl.listaUrlTagsContadas">
-            <td>
-              <button class="btn btn-default btn-sm" (click)="showDetails(url)">Expandir</button >
-              <tr  *ngIf="elementDetails!=null && url.id==elementDetails.id">
-                <br>
-                <table class="table table-hover">
-                  <thead class="bg-light">
-                    <tr>
-                      <th>Tag</th>
-                      <th>Quantidade</th>
-                    </tr>
-                  </thead>
-                  <tbody class="bg-light">
-                    <tr *ngFor="let tag of url.listaTag">
-                      <td>{{tag.nomeTag}}</td>
-                      <td>{{tag.quantidade}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-
+          <td>
+            <button class="btn btn-default btn-sm" (click)="showDetails(url)" *ngIf="mostrarBotao == true">Expandir</button>
+            <button class="btn btn-default btn-sm" (click)="showDetails(url)" *ngIf="mostrarBotao == false">Minimizar</button>
+        <tr *ngIf="elementDetails!=null && url.id==elementDetails.id">
+          <br>
+          <table class="table table-hover">
+            <thead class="bg-light">
+              <tr>
+                <th>Tag</th>
+                <th>Quantidade</th>
               </tr>
-            </td>
-            <td>{{ url.id }}</td>
-            <td>{{ url.url }}</td>
+            </thead>
+            <tbody class="bg-light">
+              <tr *ngFor="let tag of url.listaTag">
+                <td>{{tag.nomeTag}}</td>
+                <td>{{tag.quantidade}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </tr>
+        </td>
+        <td>{{ url.id }}</td>
+        <td>{{ url.url }}</td>
         </tr>
       </tbody>
     </table>
